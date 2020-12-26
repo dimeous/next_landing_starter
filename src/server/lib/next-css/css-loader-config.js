@@ -68,7 +68,6 @@ module.exports = (
     };
   }
 
-  console.log('css',cssModules);
   const cssLoader = {
     loader: 'css-loader',
     options: {
