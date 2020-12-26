@@ -1,0 +1,90 @@
+{
+  "name": "nextjs-landing-starter",
+  "version": "2.5.1",
+  "description": "Common landing website starter driven by next.js",
+  "main": "src/server/app.js",
+  "author": "Paralect",
+  "license": "MIT",
+  "keywords": [
+    "landing",
+    "next.js",
+    "react",
+    "postcss",
+    "paralect"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paralect/nextjs-landing-starter"
+  },
+  "scripts": {
+    "build": "next build src/client",
+    "development": "npm run next-server",
+    "start": "NODE_ENV=production npm run next-server",
+    "next-server": "node ./src/server/app.js",
+    "test": "run-s test:**",
+    "test:eslint": "eslint  --ext js --ext jsx ./src/",
+    "test:lint-styles": "stylelint \"src/client/**/*.pcss\"",
+    "add-contributor": "all-contributors add",
+    "generate-contributors": "all-contributors generate"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --ext js --ext jsx",
+      "git add"
+    ],
+    "*.pcss": [
+      "stylelint",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@paralect/common-logger": "0.1.10",
+    "acorn": "8.0.4",
+    "axios": "0.21.1",
+    "classnames": "2.2.6",
+    "cssnano": "4.1.10",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "find-up": "5.0.0",
+    "js-yaml": "3.14.1",
+    "lodash": "4.17.20",
+    "mini-css-extract-plugin": "1.3.3",
+    "next": "10.0.4",
+    "normalize.css": "8.0.1",
+    "npm-run-all": "4.1.5",
+    "postcss": "8.2.1",
+    "postcss-import": "14.0.0",
+    "postcss-nested": "5.0.3",
+    "postcss-preset-env": "6.7.0",
+    "prop-types": "15.7.2",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-icon-base": "2.1.2"
+  },
+  "devDependencies": {
+    "all-contributors-cli": "6.19.0",
+    "babel-eslint": "10.1.0",
+    "babel-plugin-inline-react-svg": "1.1.2",
+    "babel-plugin-module-resolver": "4.1.0",
+    "css-loader": "5.0.1",
+    "eslint": "7.16.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-import-resolver-custom-alias": "1.2.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-react": "7.21.5",
+    "extracted-loader": "1.0.7",
+    "husky": "4.3.6",
+    "lint-staged": "10.5.3",
+    "postcss-loader": "4.1.0",
+    "stylelint": "13.8.0",
+    "stylelint-config-standard": "20.0.0"
+  },
+  "optionalDependencies": {
+    "fsevents": "2.2.1"
+  }
+}
